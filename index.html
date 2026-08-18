@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description"
         content="Tifanny's Coffee n Bake. Nikmati kopi premium, roti artisan, dan hidangan lezat dalam suasana rumahan yang nyaman. Pesan langsung dari website kami.">
     <title>Tifanny's Coffee n Bake</title>
@@ -106,10 +106,10 @@
         .section-header .overline {
             font-family: var(--font-script);
             color: var(--accent);
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             letter-spacing: 1px;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .section-header h2 {
@@ -181,7 +181,7 @@
             color: var(--text-primary);
             cursor: pointer;
             transition: var(--transition);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
 
         .btn-icon:hover {
@@ -196,7 +196,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
 
             to {
@@ -227,60 +227,21 @@
             }
         }
 
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
         @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-
-            100% {
-                background-position: 200% 0;
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         @keyframes steamRise {
-            0% {
-                opacity: 0;
-                transform: translateY(0) scaleX(1);
-            }
-
-            50% {
-                opacity: 0.6;
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(-40px) scaleX(1.5);
-            }
+            0% { opacity: 0; transform: translateY(0) scaleX(1); }
+            50% { opacity: 0.6; }
+            100% { opacity: 0; transform: translateY(-40px) scaleX(1.5); }
         }
 
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .animate-on-scroll.visible {
@@ -302,11 +263,12 @@
         }
 
         .navbar.scrolled {
-            background: rgba(15, 13, 10, 0.92);
+            background: rgba(15, 13, 10, 0.94);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 10px 0;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            padding: 12px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid var(--border);
         }
 
         .navbar .container {
@@ -331,6 +293,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
+            color: var(--bg-primary);
         }
 
         .nav-logo-text {
@@ -338,6 +301,7 @@
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--text-primary);
+            white-space: nowrap;
         }
 
         .nav-logo-text span {
@@ -353,7 +317,7 @@
         .nav-links a {
             text-decoration: none;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             font-weight: 500;
             transition: var(--transition);
             position: relative;
@@ -414,19 +378,24 @@
         .mobile-toggle {
             display: none;
             flex-direction: column;
+            justify-content: center;
             gap: 5px;
             cursor: pointer;
             background: none;
             border: none;
-            padding: 4px;
+            padding: 8px;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
         }
 
         .mobile-toggle span {
-            width: 24px;
+            width: 22px;
             height: 2px;
             background: var(--text-primary);
             border-radius: 2px;
             transition: var(--transition);
+            display: block;
         }
 
         /* ═══════════════════════════════════════════════
@@ -438,6 +407,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding-top: 80px;
         }
 
         .hero-bg {
@@ -484,9 +454,9 @@
 
         .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.4rem, 5vw, 4rem);
             font-weight: 700;
-            line-height: 1.15;
+            line-height: 1.18;
             margin-bottom: 20px;
         }
 
@@ -496,7 +466,7 @@
         }
 
         .hero-desc {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-secondary);
             margin-bottom: 36px;
             max-width: 480px;
@@ -527,14 +497,28 @@
         }
 
         .hero-coffee-art::before {
-            content: '☕';
+            content: '';
+            position: absolute;
+            inset: 22px;
+            border-radius: 50%;
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            background: radial-gradient(circle at 45% 45%, #e8c49e 0%, #a6724a 50%, #4a2810 100%);
+            box-shadow: inset 0 4px 14px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-coffee-art::after {
+            content: "☕ TIFANNY'S ☕";
             position: absolute;
             inset: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 8rem;
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: rgba(255, 245, 235, 0.95);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         }
 
         .steam {
@@ -608,11 +592,44 @@
         .about-image-inner {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #3d2517 0%, #6b4530 40%, #c8956c 100%);
+            background: linear-gradient(135deg, #2a180e 0%, #4a2d1a 45%, #8f5d37 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 6rem;
+            padding: 30px;
+        }
+
+        .about-brand-seal {
+            text-align: center;
+            padding: 28px 36px;
+            border: 1px solid rgba(200, 149, 108, 0.35);
+            border-radius: 14px;
+            background: rgba(15, 13, 10, 0.7);
+            backdrop-filter: blur(12px);
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .about-brand-seal .seal-emoji {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .about-brand-seal h4 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--accent-light);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .about-brand-seal p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0;
         }
 
         .about-image::after {
@@ -621,12 +638,13 @@
             inset: 0;
             border: 1px solid var(--border);
             border-radius: var(--radius);
+            pointer-events: none;
         }
 
         .about-content h3 {
             font-family: var(--font-script);
             color: var(--accent);
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             margin-bottom: 8px;
         }
 
@@ -659,16 +677,10 @@
             border: 1px solid var(--border);
         }
 
-        .about-feature-icon {
-            width: 38px;
-            height: 38px;
-            min-width: 38px;
-            border-radius: 10px;
-            background: rgba(200, 149, 108, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
+        .about-feature-emoji {
+            font-size: 1.3rem;
+            min-width: 32px;
+            text-align: center;
         }
 
         .about-feature span {
@@ -688,7 +700,7 @@
         }
 
         .menu-tab {
-            padding: 10px 24px;
+            padding: 10px 22px;
             border-radius: 50px;
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -709,6 +721,7 @@
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
             color: var(--bg-primary);
             border-color: transparent;
+            font-weight: 600;
         }
 
         .menu-grid {
@@ -738,11 +751,11 @@
         }
 
         .menu-card-image {
-            height: 180px;
+            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.5rem;
+            font-size: 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -893,15 +906,9 @@
         }
 
         .space-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            background: rgba(200, 149, 108, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            display: block;
         }
 
         .space-card h3 {
@@ -1042,7 +1049,7 @@
         .order-type-btn .icon {
             font-size: 1.5rem;
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .order-type-btn .label {
@@ -1071,7 +1078,9 @@
         }
 
         .cart-item-emoji {
-            font-size: 2rem;
+            font-size: 1.5rem;
+            min-width: 36px;
+            text-align: center;
         }
 
         .cart-item-info {
@@ -1141,9 +1150,10 @@
             color: var(--text-muted);
         }
 
-        .cart-empty .icon {
-            font-size: 3rem;
-            margin-bottom: 12px;
+        .cart-empty .cart-empty-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            opacity: 0.6;
         }
 
         .cart-summary {
@@ -1182,7 +1192,7 @@
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(8px);
             z-index: 2000;
             display: none;
@@ -1217,6 +1227,11 @@
             text-align: center;
             padding: 32px 32px 20px;
             border-bottom: 2px dashed var(--border);
+        }
+
+        .receipt-header .receipt-logo {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
         }
 
         .receipt-header h2 {
@@ -1372,18 +1387,17 @@
 
         .location-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 48px;
+            align-items: center;
         }
 
         .location-map {
             width: 100%;
-            aspect-ratio: 16/10;
+            height: 420px;
             border-radius: var(--radius);
             overflow: hidden;
             border: 1px solid var(--border);
-            background: var(--bg-card);
         }
 
         .location-map iframe {
@@ -1415,137 +1429,178 @@
         }
 
         .loc-card-icon {
-            width: 44px;
-            height: 44px;
+            font-size: 1.8rem;
             min-width: 44px;
-            border-radius: 12px;
-            background: rgba(200, 149, 108, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
+            text-align: center;
         }
 
         .loc-card h4 {
             font-size: 1rem;
             margin-bottom: 4px;
+            font-weight: 600;
         }
 
         .loc-card p {
             font-size: 0.88rem;
-            color: var(--text-secondary);
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
         /* ═══════════════════════════════════════════════
            FOOTER
            ═══════════════════════════════════════════════ */
         .footer {
-            background: var(--bg-secondary);
+            background: #0a0806;
             border-top: 1px solid var(--border);
+            padding: 80px 0 32px;
         }
 
         .footer-main {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.3fr;
-            gap: 40px;
-            padding: 60px 0 40px;
-        }
-
-        .footer-brand .nav-logo {
-            margin-bottom: 16px;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 48px;
+            margin-bottom: 60px;
         }
 
         .footer-brand p {
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 20px;
             line-height: 1.7;
+            margin: 16px 0 24px;
+            max-width: 320px;
         }
 
         .footer-social {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .social-link {
             width: 40px;
             height: 40px;
-            border-radius: 10px;
+            border-radius: 50%;
             background: var(--bg-card);
             border: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--text-secondary);
+            transition: var(--transition);
             text-decoration: none;
             font-size: 1.1rem;
-            transition: var(--transition);
         }
 
         .social-link:hover {
             background: var(--accent);
+            color: var(--bg-primary);
             border-color: var(--accent);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .footer-col h4 {
             font-family: var(--font-display);
-            font-size: 1.05rem;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
             color: var(--text-primary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--accent);
         }
 
         .footer-col ul {
             list-style: none;
         }
 
-        .footer-col li {
+        .footer-col ul li {
             margin-bottom: 10px;
         }
 
-        .footer-col a {
-            text-decoration: none;
+        .footer-col ul a {
             color: var(--text-muted);
+            text-decoration: none;
             font-size: 0.9rem;
             transition: var(--transition);
         }
 
-        .footer-col a:hover {
+        .footer-col ul a:hover {
             color: var(--accent);
+            padding-left: 4px;
         }
 
         .footer-contact-item {
             display: flex;
-            align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 14px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
         }
 
         .footer-contact-item .icon {
-            width: 20px;
-            text-align: center;
-            color: var(--accent);
-            margin-top: 2px;
-        }
-
-        .footer-contact-item p {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            line-height: 1.5;
+            font-size: 1.1rem;
+            min-width: 20px;
         }
 
         .footer-bottom {
-            border-top: 1px solid var(--border);
-            padding: 20px 0;
+            border-top: 1px solid rgba(200, 149, 108, 0.1);
+            padding-top: 24px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        .footer-bottom p {
-            font-size: 0.82rem;
-            color: var(--text-muted);
+        /* ═══════════════════════════════════════════════
+           FLOATING MOBILE CART BAR
+           ═══════════════════════════════════════════════ */
+        .mobile-cart-float {
+            position: fixed;
+            bottom: 20px;
+            left: 16px;
+            right: 16px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: var(--bg-primary);
+            padding: 14px 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1500;
+            cursor: pointer;
+            animation: slideDown 0.3s ease;
+            text-decoration: none;
+        }
+
+        .mobile-cart-float.show {
+            display: flex;
+        }
+
+        .mobile-cart-float-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .mobile-cart-float-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            background: rgba(15, 13, 10, 0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
         }
 
         /* ═══════════════════════════════════════════════
@@ -1617,113 +1672,367 @@
         }
 
         /* ═══════════════════════════════════════════════
-           RESPONSIVE
+           RESPONSIVE DESIGN (STREAMLINED & INTUITIVE)
            ═══════════════════════════════════════════════ */
+
+        /* Tablets & Mobile Screens (<= 992px) */
         @media (max-width: 992px) {
+            .section-padding {
+                padding: 70px 0;
+            }
+
             .hero .container {
                 grid-template-columns: 1fr;
                 text-align: center;
-            }
-
-            .hero-desc {
-                margin: 0 auto 36px;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-stats {
-                justify-content: center;
+                gap: 36px;
             }
 
             .hero-visual {
                 order: -1;
+                margin-top: 10px;
             }
 
             .hero-coffee-art {
                 width: 260px;
                 height: 260px;
+                margin: 0 auto;
             }
 
-            .hero-coffee-art::before {
-                font-size: 5rem;
+            .hero-desc {
+                margin: 0 auto 28px;
+                max-width: 540px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+                max-width: 480px;
+                margin: 32px auto 0;
             }
 
             .about-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                max-width: 500px;
+                margin: 0 auto;
             }
 
             .order-wrapper {
                 grid-template-columns: 1fr;
+                max-width: 650px;
+                margin: 0 auto;
             }
 
             .location-grid {
                 grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .location-map {
+                height: 320px;
             }
 
             .footer-main {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 36px;
             }
         }
 
+        /* Standard Tablets & Large Phones (<= 768px) */
         @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 0;
+            }
+
+            .navbar.scrolled {
+                padding: 10px 0;
+            }
+
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 66px;
                 left: 0;
                 right: 0;
-                background: rgba(15, 13, 10, 0.96);
-                backdrop-filter: blur(20px);
+                bottom: 0;
+                height: calc(100vh - 66px);
+                background: rgba(15, 13, 10, 0.98);
+                backdrop-filter: blur(24px);
+                -webkit-backdrop-filter: blur(24px);
                 flex-direction: column;
-                padding: 24px;
-                gap: 20px;
-                border-bottom: 1px solid var(--border);
+                padding: 30px 24px;
+                gap: 16px;
+                border-top: 1px solid var(--border);
+                overflow-y: auto;
+                z-index: 999;
+                text-align: center;
             }
 
             .nav-links.open {
                 display: flex;
-                animation: slideDown 0.3s ease;
+                animation: fadeIn 0.25s ease-out;
+            }
+
+            .nav-links a {
+                font-size: 1.15rem;
+                padding: 12px 0;
+                display: block;
+                width: 100%;
+                border-bottom: 1px solid rgba(200, 149, 108, 0.08);
+            }
+
+            .nav-links a::after {
+                display: none;
             }
 
             .mobile-toggle {
                 display: flex;
             }
 
+            .mobile-toggle.active span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .mobile-toggle.active span:nth-child(2) {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            .mobile-toggle.active span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 6vw, 2.6rem);
+            }
+
             .hero-stats {
-                flex-direction: column;
-                gap: 16px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+                padding-top: 20px;
             }
 
-            .about-features {
-                grid-template-columns: 1fr;
+            .hero-stat h3 {
+                font-size: 1.4rem;
             }
 
+            .hero-stat p {
+                font-size: 0.75rem;
+            }
+
+            /* Streamlined horizontal swipe tabs on mobile */
+            .menu-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding: 0 16px 12px 16px;
+                margin: 0 -16px 24px -16px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                gap: 8px;
+            }
+
+            .menu-tabs::-webkit-scrollbar {
+                display: none;
+            }
+
+            .menu-tab {
+                white-space: nowrap;
+                padding: 8px 18px;
+                font-size: 0.85rem;
+                flex-shrink: 0;
+            }
+
+            /* Compact, intuitive mobile list cards to prevent endless vertical scrolling */
             .menu-grid {
                 grid-template-columns: 1fr;
+                gap: 12px;
             }
 
+            .menu-card {
+                display: none;
+            }
+
+            .menu-card.visible {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 12px 14px;
+                border-radius: var(--radius-sm);
+            }
+
+            .menu-card-image {
+                width: 58px;
+                height: 58px;
+                min-width: 58px;
+                border-radius: var(--radius-xs);
+                font-size: 1.8rem;
+                margin-right: 12px;
+            }
+
+            .menu-card-image::before {
+                display: none;
+            }
+
+            .menu-card-body {
+                padding: 0;
+                flex: 1;
+                min-width: 0;
+            }
+
+            .menu-card-category {
+                font-size: 0.68rem;
+                letter-spacing: 0.5px;
+            }
+
+            .menu-card-name {
+                font-size: 0.98rem;
+                margin: 2px 0 2px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .menu-card-desc {
+                font-size: 0.76rem;
+                margin-bottom: 4px;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                line-height: 1.3;
+            }
+
+            .menu-card-footer {
+                margin-top: 0;
+            }
+
+            .menu-card-price {
+                font-size: 1rem;
+            }
+
+            .add-cart-btn {
+                width: 34px;
+                height: 34px;
+                min-width: 34px;
+                font-size: 1.1rem;
+                margin-left: 10px;
+            }
+
+            /* Compact Spaces grid on mobile */
             .space-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .space-card {
+                padding: 18px 12px;
+            }
+
+            .space-icon {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+            }
+
+            .space-card h3 {
+                font-size: 0.95rem;
+                margin-bottom: 4px;
+            }
+
+            .space-card p {
+                font-size: 0.78rem;
+                line-height: 1.4;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .space-tag {
+                margin-top: 8px;
+                padding: 3px 8px;
+                font-size: 0.68rem;
+            }
+
+            .order-form-card,
+            .order-summary-card {
+                padding: 20px 16px;
             }
 
             .order-type-selector {
-                grid-template-columns: 1fr;
+                gap: 6px;
             }
 
-            .footer-main {
-                grid-template-columns: 1fr;
+            .order-type-btn {
+                padding: 10px 4px;
             }
 
-            .receipt-actions {
-                flex-direction: column;
+            .order-type-btn .icon {
+                font-size: 1.2rem;
+                margin-bottom: 2px;
+            }
+
+            .order-type-btn .label {
+                font-size: 0.78rem;
+            }
+
+            .order-type-btn .sublabel {
+                font-size: 0.65rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px; /* Prevents auto-zoom in mobile Safari */
+            }
+
+            .receipt-modal {
+                max-width: 95%;
+                margin: 10px auto;
+            }
+
+            .toast-container {
+                left: 16px;
+                right: 16px;
+                bottom: 80px; /* Above mobile cart float */
+            }
+
+            .toast {
+                min-width: unset;
+                width: 100%;
+                font-size: 0.85rem;
+                padding: 12px 16px;
             }
         }
 
-        @media (max-width: 480px) {
+        /* Mobile Screens (<= 576px) */
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 16px;
+            }
+
             .section-padding {
-                padding: 60px 0;
+                padding: 50px 0;
+            }
+
+            .section-header {
+                margin-bottom: 30px;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
             }
 
             .hero-coffee-art {
@@ -1731,8 +2040,73 @@
                 height: 200px;
             }
 
-            .hero-coffee-art::before {
-                font-size: 4rem;
+            .hero-coffee-art::after {
+                font-size: 0.95rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .about-content h2 {
+                font-size: 1.6rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                text-align: center;
+            }
+
+            .footer-brand .nav-logo {
+                justify-content: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-contact-item {
+                justify-content: center;
+                text-align: left;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .receipt-header {
+                padding: 20px 16px 14px;
+            }
+
+            .receipt-body {
+                padding: 16px;
+            }
+
+            .receipt-actions {
+                padding: 0 16px 20px;
+            }
+
+            .back-to-top {
+                bottom: 80px; /* Above float bar */
+                right: 16px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
 
@@ -1787,11 +2161,11 @@
                 <li><a href="#location">Lokasi</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="btn-icon cart-btn" onclick="scrollToOrder()" title="Keranjang">
+                <button class="btn-icon cart-btn" onclick="scrollToOrder()" title="Keranjang" aria-label="Keranjang">
                     🛒
                     <div class="cart-badge" id="cartBadge">0</div>
                 </button>
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -1817,8 +2191,8 @@
                     dan roti artisan yang dipanggang segar setiap hari di Tifanny's Coffee n Bake.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#menu" class="btn btn-primary">🍽️ Lihat Menu</a>
-                    <a href="#order" class="btn btn-outline">📋 Pesan Sekarang</a>
+                    <a href="#menu" class="btn btn-primary">Lihat Menu ☕</a>
+                    <a href="#order" class="btn btn-outline">Pesan Sekarang 🛒</a>
                 </div>
                 <div class="hero-stats">
                     <div class="hero-stat">
@@ -1826,11 +2200,11 @@
                         <p>Pilihan Menu</p>
                     </div>
                     <div class="hero-stat">
-                        <h3>4.9★</h3>
+                        <h3>4.9 ⭐</h3>
                         <p>Rating Google</p>
                     </div>
                     <div class="hero-stat">
-                        <h3>5K+</h3>
+                        <h3>5.000+</h3>
                         <p>Pelanggan Senang</p>
                     </div>
                 </div>
@@ -1852,7 +2226,13 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image animate-on-scroll">
-                    <div class="about-image-inner">🏠☕🍞</div>
+                    <div class="about-image-inner">
+                        <div class="about-brand-seal">
+                            <span class="seal-emoji">☕</span>
+                            <h4>Tifanny's</h4>
+                            <p>Coffee & Bakehouse</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-content animate-on-scroll">
                     <h3>Cerita Kami</h3>
@@ -1870,19 +2250,19 @@
                     </p>
                     <div class="about-features">
                         <div class="about-feature">
-                            <div class="about-feature-icon">🫘</div>
+                            <span class="about-feature-emoji">☕</span>
                             <span>Biji Kopi Premium</span>
                         </div>
                         <div class="about-feature">
-                            <div class="about-feature-icon">🍞</div>
+                            <span class="about-feature-emoji">🥐</span>
                             <span>Roti Segar Harian</span>
                         </div>
                         <div class="about-feature">
-                            <div class="about-feature-icon">👨‍🍳</div>
+                            <span class="about-feature-emoji">👨‍🍳</span>
                             <span>Chef Berpengalaman</span>
                         </div>
                         <div class="about-feature">
-                            <div class="about-feature-icon">🏡</div>
+                            <span class="about-feature-emoji">🏡</span>
                             <span>Suasana Homey</span>
                         </div>
                     </div>
@@ -1904,10 +2284,10 @@
             <div class="menu-tabs" id="menuTabs">
                 <button class="menu-tab active" data-cat="all">Semua</button>
                 <button class="menu-tab" data-cat="coffee">☕ Coffee</button>
-                <button class="menu-tab" data-cat="non-coffee">🍵 Non-Coffee</button>
-                <button class="menu-tab" data-cat="juice">🧃 Juice & Smoothie</button>
-                <button class="menu-tab" data-cat="breakfast">🍳 Breakfast</button>
-                <button class="menu-tab" data-cat="lunch">🍝 Lunch</button>
+                <button class="menu-tab" data-cat="non-coffee">🧋 Non-Coffee</button>
+                <button class="menu-tab" data-cat="juice">🍹 Juice & Smoothie</button>
+                <button class="menu-tab" data-cat="breakfast">🥞 Breakfast</button>
+                <button class="menu-tab" data-cat="lunch">🍛 Lunch</button>
                 <button class="menu-tab" data-cat="dinner">🥩 Dinner</button>
                 <button class="menu-tab" data-cat="snack">🍟 Snack</button>
                 <button class="menu-tab" data-cat="dessert">🍰 Dessert</button>
@@ -1930,45 +2310,44 @@
             </div>
             <div class="space-grid">
                 <div class="space-card animate-on-scroll">
-                    <div class="space-icon">❄️</div>
+                    <span class="space-icon">❄️</span>
                     <h3>Indoor AC — Non-Smoking</h3>
-                    <p>Ruangan ber-AC sejuk dengan suasana tenang, cocok untuk bersantai bersama keluarga dan anak-anak.
+                    <p>Ruangan ber-AC sejuk dengan suasana tenang, cocok untuk bersantai bersama keluarga dan relasi.
                     </p>
-                    <span class="space-tag">👨‍👩‍👧‍👦 Family Friendly</span>
+                    <span class="space-tag">Family Friendly</span>
                 </div>
                 <div class="space-card animate-on-scroll">
-                    <div class="space-icon">🚬</div>
+                    <span class="space-icon">🚬</span>
                     <h3>Indoor AC — Smoking Area</h3>
-                    <p>Area merokok terpisah dengan ventilasi khusus dan kenyamanan AC, menikmati kopi tanpa khawatir.
+                    <p>Area merokok terpisah dengan sistem exhaust modern dan pendingin ruangan yang optimal.
                     </p>
-                    <span class="space-tag">🔥 Ventilasi Khusus</span>
+                    <span class="space-tag">Ventilasi Khusus</span>
                 </div>
                 <div class="space-card animate-on-scroll">
-                    <div class="space-icon">🌿</div>
+                    <span class="space-icon">🌿</span>
                     <h3>Outdoor Garden</h3>
-                    <p>Taman terbuka yang asri dengan tanaman hijau dan lampu-lampu cantik, sempurna untuk sore hari.
+                    <p>Taman terbuka yang asri dengan pencahayaan hangat, cocok untuk suasana sore dan malam hari.
                     </p>
-                    <span class="space-tag">🌅 Sunset Vibes</span>
+                    <span class="space-tag">Sunset Ambience</span>
                 </div>
                 <div class="space-card animate-on-scroll">
-                    <div class="space-icon">💻</div>
+                    <span class="space-icon">💼</span>
                     <h3>Workspace Area</h3>
-                    <p>Dilengkapi stop kontak, WiFi kencang, dan meja kerja ergonomis. Produktif sambil ngopi!</p>
-                    <span class="space-tag">⚡ Free High-Speed WiFi</span>
+                    <p>Dilengkapi stop kontak di setiap meja, koneksi WiFi berkecepatan tinggi, dan kursi ergonomis.</p>
+                    <span class="space-tag">High-Speed WiFi</span>
                 </div>
                 <div class="space-card animate-on-scroll">
-                    <div class="space-icon">📸</div>
-                    <h3>Instagrammable Corner</h3>
-                    <p>Sudut-sudut aesthetic yang siap untuk foto terbaik Anda. Background cantik untuk konten sosmed.
+                    <span class="space-icon">📸</span>
+                    <h3>Photo Corner</h3>
+                    <p>Sudut estetik dengan pencahayaan terkurasi untuk dokumentasi dan foto terbaik Anda.
                     </p>
-                    <span class="space-tag">🌟 Photo Ready</span>
+                    <span class="space-tag">Aesthetic Spot</span>
                 </div>
                 <div class="space-card animate-on-scroll">
-                    <div class="space-icon">🎉</div>
+                    <span class="space-icon">👑</span>
                     <h3>Private Room</h3>
-                    <p>Ruangan privat untuk acara ulang tahun, meeting, atau gathering kecil. Reservasi melalui
-                        WhatsApp.</p>
-                    <span class="space-tag">🔒 Reservasi Only</span>
+                    <p>Ruang privat untuk rapat bisnis, presentasi, atau perayaan keluarga khusus.</p>
+                    <span class="space-tag">Reservasi Khusus</span>
                 </div>
             </div>
         </div>
@@ -1982,7 +2361,7 @@
             <div class="section-header animate-on-scroll">
                 <span class="overline">Order Now</span>
                 <h2>Pesan Langsung</h2>
-                <p>Pilih menu, isi data, dan dapatkan struk digital yang bisa ditukarkan di kasir</p>
+                <p>Pilih menu, isi data, dan dapatkan struk digital resmi untuk pembayaran di kasir</p>
             </div>
             <div class="order-wrapper">
                 <!-- ORDER FORM -->
@@ -2007,7 +2386,7 @@
                             <span class="sublabel">Makan di tempat</span>
                         </button>
                         <button class="order-type-btn" data-type="take-away" type="button">
-                            <span class="icon">🥡</span>
+                            <span class="icon">🛍️</span>
                             <span class="label">Take Away</span>
                             <span class="sublabel">Bawa pulang</span>
                         </button>
@@ -2023,11 +2402,11 @@
                         <label for="seatingSelect">Pilih Ruangan</label>
                         <select id="seatingSelect">
                             <option value="">-- Pilih ruangan --</option>
-                            <option value="Indoor AC — Non-Smoking">❄️ Indoor AC — Non-Smoking</option>
-                            <option value="Indoor AC — Smoking">🚬 Indoor AC — Smoking</option>
-                            <option value="Outdoor Garden">🌿 Outdoor Garden</option>
-                            <option value="Workspace Area">💻 Workspace Area</option>
-                            <option value="Instagrammable Corner">📸 Instagrammable Corner</option>
+                            <option value="Indoor AC — Non-Smoking">Indoor AC — Non-Smoking</option>
+                            <option value="Indoor AC — Smoking">Indoor AC — Smoking</option>
+                            <option value="Outdoor Garden">Outdoor Garden</option>
+                            <option value="Workspace Area">Workspace Area</option>
+                            <option value="Photo Corner">Photo Corner</option>
                         </select>
                     </div>
 
@@ -2061,9 +2440,9 @@
                     <h3>🛒 Keranjang Pesanan</h3>
                     <div class="cart-items-list" id="cartItemsList">
                         <div class="cart-empty" id="cartEmpty">
-                            <div class="icon">🛒</div>
+                            <div class="cart-empty-icon">🛒</div>
                             <p>Keranjang masih kosong</p>
-                            <p style="font-size:0.8rem;margin-top:6px;">Tambahkan menu dari daftar menu di atas</p>
+                            <p style="font-size:0.8rem;margin-top:6px;">Pilih menu dari daftar di atas</p>
                         </div>
                     </div>
                     <div class="cart-summary" id="cartSummary" style="display:none;">
@@ -2086,7 +2465,7 @@
                     </div>
                     <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px;"
                         onclick="placeOrder()" id="placeOrderBtn" disabled>
-                        📋 Buat Pesanan & Cetak Struk
+                        Buat Pesanan & Download Struk
                     </button>
                 </div>
             </div>
@@ -2101,7 +2480,7 @@
             <div class="section-header animate-on-scroll">
                 <span class="overline">Visit Us</span>
                 <h2>Lokasi Kami</h2>
-                <p>Temukan kami dan nikmati pengalaman ngopi terbaik</p>
+                <p>Temukan kami dan nikmati pengalaman kopi dan roti artisan terbaik</p>
             </div>
             <div class="location-grid">
                 <div class="location-map animate-on-scroll">
@@ -2118,7 +2497,7 @@
                         </div>
                     </div>
                     <div class="loc-card">
-                        <div class="loc-card-icon">🕐</div>
+                        <div class="loc-card-icon">🕒</div>
                         <div>
                             <h4>Jam Operasional</h4>
                             <p>Senin — Jumat: 07.00 — 22.00 WIB<br>
@@ -2133,17 +2512,17 @@
                         </div>
                     </div>
                     <div class="loc-card">
-                        <div class="loc-card-icon">📧</div>
+                        <div class="loc-card-icon">✉️</div>
                         <div>
                             <h4>Email</h4>
                             <p>hello@tifannys.id</p>
                         </div>
                     </div>
                     <div class="loc-card">
-                        <div class="loc-card-icon">🅿️</div>
+                        <div class="loc-card-icon">🚗</div>
                         <div>
                             <h4>Parkir</h4>
-                            <p>Tersedia parkir luas untuk motor & mobil (gratis)</p>
+                            <p>Tersedia area parkir luas untuk motor & mobil (gratis)</p>
                         </div>
                     </div>
                 </div>
@@ -2163,13 +2542,13 @@
                         <div class="nav-logo-text">Tifanny's <span>Coffee n Bake</span></div>
                     </a>
                     <p>Kopi & roti artisan dari rumahan untuk semua. Menyajikan cita rasa terbaik dengan bahan pilihan
-                        dan penuh cinta sejak 2024.</p>
+                        dan dedikasi sejak 2024.</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link" title="Instagram">📷</a>
-                        <a href="#" class="social-link" title="TikTok">🎵</a>
-                        <a href="#" class="social-link" title="Facebook">📘</a>
-                        <a href="#" class="social-link" title="WhatsApp">💬</a>
-                        <a href="#" class="social-link" title="YouTube">🎬</a>
+                        <a href="#" class="social-link" title="Instagram" aria-label="Instagram">📸</a>
+                        <a href="#" class="social-link" title="TikTok" aria-label="TikTok">🎵</a>
+                        <a href="#" class="social-link" title="Facebook" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" title="WhatsApp" aria-label="WhatsApp">💬</a>
+                        <a href="#" class="social-link" title="YouTube" aria-label="YouTube">▶️</a>
                     </div>
                 </div>
 
@@ -2189,7 +2568,7 @@
                     <h4>Info Lainnya</h4>
                     <ul>
                         <li><a href="#">Karir & Lowongan</a></li>
-                        <li><a href="#">Franchise</a></li>
+                        <li><a href="#">Kemitraan</a></li>
                         <li><a href="#">Catering & Event</a></li>
                         <li><a href="#">Kebijakan Privasi</a></li>
                         <li><a href="#">Syarat & Ketentuan</a></li>
@@ -2208,11 +2587,11 @@
                         <p>+62 812-3456-7890</p>
                     </div>
                     <div class="footer-contact-item">
-                        <span class="icon">📧</span>
+                        <span class="icon">✉️</span>
                         <p>hello@tifannys.id</p>
                     </div>
                     <div class="footer-contact-item">
-                        <span class="icon">🕐</span>
+                        <span class="icon">🕒</span>
                         <p>Senin — Minggu<br>07.00 — 23.00 WIB</p>
                     </div>
                 </div>
@@ -2223,6 +2602,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- FLOATING MOBILE CART BAR -->
+    <a href="#order" class="mobile-cart-float" id="mobileCartFloat">
+        <div class="mobile-cart-float-left">
+            <span>🛒</span>
+            <span id="floatCartSummary">0 Item | Rp 0</span>
+        </div>
+        <div class="mobile-cart-float-right">
+            <span>Pesan</span> →
+        </div>
+    </a>
 
     <!-- RECEIPT MODAL -->
     <div class="modal-overlay" id="receiptModal">
@@ -2235,81 +2625,83 @@
     <div class="toast-container" id="toastContainer"></div>
 
     <!-- BACK TO TOP -->
-    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Kembali ke atas" aria-label="Kembali ke atas">
+        ▲
+    </button>
 
     <!-- ═══════════════════════════════════════════════
-         JAVASCRIPT
+         JAVASCRIPT LOGIC
          ═══════════════════════════════════════════════ -->
     <script>
         /* ─────────────── MENU DATA ─────────────── */
         const menuItems = [
             // COFFEE
-            { id: 1, name: "Espresso", cat: "coffee", price: 18000, emoji: "☕", desc: "Shot espresso pekat dari biji Arabica pilihan Gayo." },
-            { id: 2, name: "Americano", cat: "coffee", price: 22000, emoji: "☕", desc: "Espresso dengan air panas, rasa kopi yang bold dan clean." },
-            { id: 3, name: "Cappuccino", cat: "coffee", price: 28000, emoji: "☕", desc: "Espresso, steamed milk & foam lembut. Klasik dan creamy." },
-            { id: 4, name: "Café Latte", cat: "coffee", price: 28000, emoji: "🥛", desc: "Espresso dengan susu steamed yang creamy dan lembut." },
-            { id: 5, name: "Caramel Macchiato", cat: "coffee", price: 32000, emoji: "🍯", desc: "Vanilla, susu, espresso, dan drizzle caramel homemade." },
-            { id: 6, name: "Mocha Latte", cat: "coffee", price: 30000, emoji: "🍫", desc: "Perpaduan espresso, cokelat Belgian, dan susu steamed." },
-            { id: 7, name: "Affogato", cat: "coffee", price: 35000, emoji: "🍨", desc: "Gelato vanilla premium disiram espresso panas." },
-            { id: 8, name: "Es Kopi Susu Tifanny", cat: "coffee", price: 25000, emoji: "🧊", desc: "Signature! Espresso, susu, gula aren, & secret spice." },
-            { id: 9, name: "Cold Brew", cat: "coffee", price: 28000, emoji: "🧊", desc: "Diseduh dingin 18 jam, smooth dan rendah asam." },
-            { id: 10, name: "V60 Pour Over", cat: "coffee", price: 30000, emoji: "☕", desc: "Manual brew V60 dengan biji single-origin pilihan." },
+            { id: 1, name: "Espresso", cat: "coffee", price: 18000, desc: "Shot espresso pekat dari biji Arabica pilihan Gayo.", emoji: "☕" },
+            { id: 2, name: "Americano", cat: "coffee", price: 22000, desc: "Espresso dengan air panas, rasa kopi yang bold dan clean.", emoji: "☕" },
+            { id: 3, name: "Cappuccino", cat: "coffee", price: 28000, desc: "Espresso, steamed milk & foam lembut. Klasik dan creamy.", emoji: "☕" },
+            { id: 4, name: "Café Latte", cat: "coffee", price: 28000, desc: "Espresso dengan susu steamed yang creamy dan lembut.", emoji: "☕" },
+            { id: 5, name: "Caramel Macchiato", cat: "coffee", price: 32000, desc: "Vanilla, susu, espresso, dan drizzle caramel homemade.", emoji: "☕" },
+            { id: 6, name: "Mocha Latte", cat: "coffee", price: 30000, desc: "Perpaduan espresso, cokelat Belgian, dan susu steamed.", emoji: "☕" },
+            { id: 7, name: "Affogato", cat: "coffee", price: 35000, desc: "Gelato vanilla premium disiram espresso panas.", emoji: "🍨" },
+            { id: 8, name: "Es Kopi Susu Tifanny", cat: "coffee", price: 25000, desc: "Signature! Espresso, susu, gula aren, & secret spice.", emoji: "☕" },
+            { id: 9, name: "Cold Brew", cat: "coffee", price: 28000, desc: "Diseduh dingin 18 jam, smooth dan rendah asam.", emoji: "🧊" },
+            { id: 10, name: "V60 Pour Over", cat: "coffee", price: 30000, desc: "Manual brew V60 dengan biji single-origin pilihan.", emoji: "☕" },
 
             // NON-COFFEE
-            { id: 11, name: "Matcha Latte", cat: "non-coffee", price: 28000, emoji: "🍵", desc: "Matcha Uji premium dari Jepang dengan susu segar." },
-            { id: 12, name: "Cokelat Panas", cat: "non-coffee", price: 25000, emoji: "🍫", desc: "Cokelat Belgian premium, rich dan creamy." },
-            { id: 13, name: "Taro Latte", cat: "non-coffee", price: 26000, emoji: "🟣", desc: "Real taro dengan susu, wangi dan creamy." },
-            { id: 14, name: "Red Velvet Latte", cat: "non-coffee", price: 28000, emoji: "🔴", desc: "Perpaduan cokelat dan vanilla dengan warna cantik." },
-            { id: 15, name: "Thai Tea", cat: "non-coffee", price: 22000, emoji: "🧋", desc: "Teh Thailand asli dengan susu kental manis." },
-            { id: 16, name: "Lemon Tea", cat: "non-coffee", price: 18000, emoji: "🍋", desc: "Teh hitam segar dengan lemon dan madu." },
+            { id: 11, name: "Matcha Latte", cat: "non-coffee", price: 28000, desc: "Matcha Uji premium dari Jepang dengan susu segar.", emoji: "🍵" },
+            { id: 12, name: "Cokelat Panas", cat: "non-coffee", price: 25000, desc: "Cokelat Belgian premium, rich dan creamy.", emoji: "🍫" },
+            { id: 13, name: "Taro Latte", cat: "non-coffee", price: 26000, desc: "Real taro dengan susu, wangi dan creamy.", emoji: "🍠" },
+            { id: 14, name: "Red Velvet Latte", cat: "non-coffee", price: 28000, desc: "Perpaduan cokelat dan vanilla dengan warna cantik.", emoji: "🍰" },
+            { id: 15, name: "Thai Tea", cat: "non-coffee", price: 22000, desc: "Teh Thailand asli dengan susu kental manis.", emoji: "🧋" },
+            { id: 16, name: "Lemon Tea", cat: "non-coffee", price: 18000, desc: "Teh hitam segar dengan lemon dan madu.", emoji: "🍋" },
 
             // JUICE & SMOOTHIE
-            { id: 17, name: "Orange Juice Fresh", cat: "juice", price: 22000, emoji: "🍊", desc: "Jus jeruk segar yang diperas langsung, tanpa gula." },
-            { id: 18, name: "Mango Smoothie", cat: "juice", price: 28000, emoji: "🥭", desc: "Smoothie mangga Harum Manis dengan yogurt." },
-            { id: 19, name: "Mixed Berry Smoothie", cat: "juice", price: 30000, emoji: "🫐", desc: "Blueberry, strawberry, raspberry, dan yogurt Greek." },
-            { id: 20, name: "Avocado Smoothie", cat: "juice", price: 28000, emoji: "🥑", desc: "Alpukat Mentega blend dengan susu dan madu." },
-            { id: 21, name: "Watermelon Juice", cat: "juice", price: 20000, emoji: "🍉", desc: "Jus semangka segar, manis alami dan menyegarkan." },
-            { id: 22, name: "Green Detox", cat: "juice", price: 25000, emoji: "🥒", desc: "Bayam, apel hijau, mentimun, dan jahe." },
+            { id: 17, name: "Orange Juice Fresh", cat: "juice", price: 22000, desc: "Jus jeruk segar yang diperas langsung, tanpa gula.", emoji: "🍊" },
+            { id: 18, name: "Mango Smoothie", cat: "juice", price: 28000, desc: "Smoothie mangga Harum Manis dengan yogurt.", emoji: "🥭" },
+            { id: 19, name: "Mixed Berry Smoothie", cat: "juice", price: 30000, desc: "Blueberry, strawberry, raspberry, dan yogurt Greek.", emoji: "🫐" },
+            { id: 20, name: "Avocado Smoothie", cat: "juice", price: 28000, desc: "Alpukat Mentega blend dengan susu dan madu.", emoji: "🥑" },
+            { id: 21, name: "Watermelon Juice", cat: "juice", price: 20000, desc: "Jus semangka segar, manis alami dan menyegarkan.", emoji: "🍉" },
+            { id: 22, name: "Green Detox", cat: "juice", price: 25000, desc: "Bayam, apel hijau, mentimun, dan jahe.", emoji: "🥬" },
 
             // BREAKFAST
-            { id: 23, name: "American Breakfast", cat: "breakfast", price: 45000, emoji: "🍳", desc: "Telur, sosis, bacon, toast, salad, dan hash brown." },
-            { id: 24, name: "Pancake Stack", cat: "breakfast", price: 38000, emoji: "🥞", desc: "3 fluffy pancakes dengan maple syrup & butter." },
-            { id: 25, name: "French Toast", cat: "breakfast", price: 35000, emoji: "🍞", desc: "Roti brioche dengan telur, kayu manis, dan berry." },
-            { id: 26, name: "Acai Bowl", cat: "breakfast", price: 42000, emoji: "🥣", desc: "Acai, granola, pisang, berry, dan madu." },
-            { id: 27, name: "Eggs Benedict", cat: "breakfast", price: 48000, emoji: "🥚", desc: "Poached egg, ham, English muffin, hollandaise." },
-            { id: 28, name: "Croissant Butter", cat: "breakfast", price: 25000, emoji: "🥐", desc: "Croissant buttery yang renyah dan lembut di dalam." },
+            { id: 23, name: "American Breakfast", cat: "breakfast", price: 45000, desc: "Telur, sosis, bacon, toast, salad, dan hash brown.", emoji: "🍳" },
+            { id: 24, name: "Pancake Stack", cat: "breakfast", price: 38000, desc: "3 fluffy pancakes dengan maple syrup & butter.", emoji: "🥞" },
+            { id: 25, name: "French Toast", cat: "breakfast", price: 35000, desc: "Roti brioche dengan telur, kayu manis, dan berry.", emoji: "🍞" },
+            { id: 26, name: "Acai Bowl", cat: "breakfast", price: 42000, desc: "Acai, granola, pisang, berry, dan madu.", emoji: "🥣" },
+            { id: 27, name: "Eggs Benedict", cat: "breakfast", price: 48000, desc: "Poached egg, ham, English muffin, hollandaise.", emoji: "🥚" },
+            { id: 28, name: "Croissant Butter", cat: "breakfast", price: 25000, desc: "Croissant buttery yang renyah dan lembut di dalam.", emoji: "🥐" },
 
             // LUNCH
-            { id: 29, name: "Chicken Teriyaki Rice", cat: "lunch", price: 42000, emoji: "🍗", desc: "Ayam teriyaki dengan nasi Jepang dan salad." },
-            { id: 30, name: "Aglio Olio Prawn", cat: "lunch", price: 48000, emoji: "🍝", desc: "Spaghetti aglio olio dengan udang panggang." },
-            { id: 31, name: "Chicken Katsu Curry", cat: "lunch", price: 45000, emoji: "🍛", desc: "Ayam katsu renyah dengan saus kari Jepang." },
-            { id: 32, name: "Nasi Goreng Kampung", cat: "lunch", price: 35000, emoji: "🍚", desc: "Nasi goreng bumbu kampung, telur ceplok & kerupuk." },
-            { id: 33, name: "Caesar Salad Bowl", cat: "lunch", price: 38000, emoji: "🥗", desc: "Romaine, crouton, parmesan, grilled chicken." },
-            { id: 34, name: "Club Sandwich", cat: "lunch", price: 42000, emoji: "🥪", desc: "Triple decker dengan ayam, bacon, dan telur." },
+            { id: 29, name: "Chicken Teriyaki Rice", cat: "lunch", price: 42000, desc: "Ayam teriyaki dengan nasi Jepang dan salad.", emoji: "🍱" },
+            { id: 30, name: "Aglio Olio Prawn", cat: "lunch", price: 48000, desc: "Spaghetti aglio olio dengan udang panggang.", emoji: "🍝" },
+            { id: 31, name: "Chicken Katsu Curry", cat: "lunch", price: 45000, desc: "Ayam katsu renyah dengan saus kari Jepang.", emoji: "🍛" },
+            { id: 32, name: "Nasi Goreng Kampung", cat: "lunch", price: 35000, desc: "Nasi goreng bumbu kampung, telur ceplok & kerupuk.", emoji: "🍳" },
+            { id: 33, name: "Caesar Salad Bowl", cat: "lunch", price: 38000, desc: "Romaine, crouton, parmesan, grilled chicken.", emoji: "🥗" },
+            { id: 34, name: "Club Sandwich", cat: "lunch", price: 42000, desc: "Triple decker dengan ayam, bacon, dan telur.", emoji: "🥪" },
 
             // DINNER
-            { id: 35, name: "Grilled Sirloin Steak", cat: "dinner", price: 85000, emoji: "🥩", desc: "200gr sirloin, mashed potato, sautéed veggies." },
-            { id: 36, name: "Grilled Salmon", cat: "dinner", price: 78000, emoji: "🐟", desc: "Salmon panggang dengan lemon butter sauce." },
-            { id: 37, name: "Lamb Chop", cat: "dinner", price: 95000, emoji: "🍖", desc: "Double lamb chop, rosemary, dan mint sauce." },
-            { id: 38, name: "Creamy Mushroom Pasta", cat: "dinner", price: 48000, emoji: "🍝", desc: "Fettuccine dengan saus jamur creamy truffle." },
-            { id: 39, name: "BBQ Ribs", cat: "dinner", price: 88000, emoji: "🍖", desc: "Slow-cooked pork ribs dengan BBQ sauce." },
-            { id: 40, name: "Chicken Parmigiana", cat: "dinner", price: 55000, emoji: "🍗", desc: "Ayam goreng renyah, marinara, mozzarella leleh." },
+            { id: 35, name: "Grilled Sirloin Steak", cat: "dinner", price: 85000, desc: "200gr sirloin, mashed potato, sautéed veggies.", emoji: "🥩" },
+            { id: 36, name: "Grilled Salmon", cat: "dinner", price: 78000, desc: "Salmon panggang dengan lemon butter sauce.", emoji: "🐟" },
+            { id: 37, name: "Lamb Chop", cat: "dinner", price: 95000, desc: "Double lamb chop, rosemary, dan mint sauce.", emoji: "🍖" },
+            { id: 38, name: "Creamy Mushroom Pasta", cat: "dinner", price: 48000, desc: "Fettuccine dengan saus jamur creamy truffle.", emoji: "🍝" },
+            { id: 39, name: "BBQ Ribs", cat: "dinner", price: 88000, desc: "Slow-cooked pork ribs dengan BBQ sauce.", emoji: "🍖" },
+            { id: 40, name: "Chicken Parmigiana", cat: "dinner", price: 55000, desc: "Ayam goreng renyah, marinara, mozzarella leleh.", emoji: "🍗" },
 
             // SNACK
-            { id: 41, name: "French Fries", cat: "snack", price: 22000, emoji: "🍟", desc: "Kentang goreng renyah dengan saus pilihan." },
-            { id: 42, name: "Chicken Wings", cat: "snack", price: 35000, emoji: "🍗", desc: "6 pcs wings: pilih BBQ, buffalo, atau honey garlic." },
-            { id: 43, name: "Onion Rings", cat: "snack", price: 25000, emoji: "🧅", desc: "Bawang bombay goreng crispy dengan ranch dip." },
-            { id: 44, name: "Nachos Supreme", cat: "snack", price: 38000, emoji: "🧀", desc: "Tortilla chips, keju, salsa, guacamole, sour cream." },
-            { id: 45, name: "Garlic Bread", cat: "snack", price: 20000, emoji: "🍞", desc: "Roti bawang putih panggang dengan keju mozzarella." },
-            { id: 46, name: "Dimsum Mix (6pcs)", cat: "snack", price: 32000, emoji: "🥟", desc: "Siomay, hakau, dan lumpia udang kukus." },
+            { id: 41, name: "French Fries", cat: "snack", price: 22000, desc: "Kentang goreng renyah dengan saus pilihan.", emoji: "🍟" },
+            { id: 42, name: "Chicken Wings", cat: "snack", price: 35000, desc: "6 pcs wings: pilih BBQ, buffalo, atau honey garlic.", emoji: "🍗" },
+            { id: 43, name: "Onion Rings", cat: "snack", price: 25000, desc: "Bawang bombay goreng crispy dengan ranch dip.", emoji: "🧅" },
+            { id: 44, name: "Nachos Supreme", cat: "snack", price: 38000, desc: "Tortilla chips, keju, salsa, guacamole, sour cream.", emoji: "🧀" },
+            { id: 45, name: "Garlic Bread", cat: "snack", price: 20000, desc: "Roti bawang putih panggang dengan keju mozzarella.", emoji: "🥖" },
+            { id: 46, name: "Dimsum Mix (6pcs)", cat: "snack", price: 32000, desc: "Siomay, hakau, dan lumpia udang kukus.", emoji: "🥟" },
 
             // DESSERT
-            { id: 47, name: "Tiramisu", cat: "dessert", price: 38000, emoji: "🍰", desc: "Classic Italian tiramisu dengan mascarpone asli." },
-            { id: 48, name: "Chocolate Lava Cake", cat: "dessert", price: 35000, emoji: "🍫", desc: "Kue cokelat dengan lelehan cokelat di dalamnya." },
-            { id: 49, name: "Crème Brûlée", cat: "dessert", price: 35000, emoji: "🍮", desc: "Custard vanilla dengan karamel gula di atasnya." },
-            { id: 50, name: "Banana Split", cat: "dessert", price: 32000, emoji: "🍌", desc: "Es krim 3 rasa, pisang, topping, dan wafer." },
-            { id: 51, name: "Cheesecake", cat: "dessert", price: 38000, emoji: "🧁", desc: "New York style cheesecake dengan berry compote." },
-            { id: 52, name: "Roti Bakar Tifanny", cat: "dessert", price: 25000, emoji: "🍞", desc: "Signature! Roti bakar isi cokelat, keju, atau pandan." },
+            { id: 47, name: "Tiramisu", cat: "dessert", price: 38000, desc: "Classic Italian tiramisu dengan mascarpone asli.", emoji: "🍰" },
+            { id: 48, name: "Chocolate Lava Cake", cat: "dessert", price: 35000, desc: "Kue cokelat dengan lelehan cokelat di dalamnya.", emoji: "🍫" },
+            { id: 49, name: "Crème Brûlée", cat: "dessert", price: 35000, desc: "Custard vanilla dengan karamel gula di atasnya.", emoji: "🍮" },
+            { id: 50, name: "Banana Split", cat: "dessert", price: 32000, desc: "Es krim 3 rasa, pisang, topping, dan wafer.", emoji: "🍨" },
+            { id: 51, name: "Cheesecake", cat: "dessert", price: 38000, desc: "New York style cheesecake dengan berry compote.", emoji: "🧀" },
+            { id: 52, name: "Roti Bakar Tifanny", cat: "dessert", price: 25000, desc: "Signature! Roti bakar isi cokelat, keju, atau pandan.", emoji: "🍞" },
         ];
 
         /* ─────────────── STATE ─────────────── */
@@ -2329,7 +2721,7 @@
                 const card = document.createElement('div');
                 card.className = 'menu-card visible';
                 card.dataset.cat = item.cat;
-                card.style.animationDelay = `${idx * 0.05}s`;
+                card.style.animationDelay = `${idx * 0.03}s`;
                 card.innerHTML = `
                 <div class="menu-card-image">${item.emoji}</div>
                 <div class="menu-card-body">
@@ -2338,7 +2730,7 @@
                     <div class="menu-card-desc">${item.desc}</div>
                     <div class="menu-card-footer">
                         <div class="menu-card-price">Rp ${item.price.toLocaleString('id-ID')}</div>
-                        <button class="add-cart-btn" onclick="addToCart(${item.id})" title="Tambah ke keranjang">+</button>
+                        <button class="add-cart-btn" onclick="addToCart(${item.id})" title="Tambah ke keranjang" aria-label="Tambah ${item.name}">+</button>
                     </div>
                 </div>
             `;
@@ -2347,7 +2739,7 @@
         }
 
         function getCatLabel(cat) {
-            const map = { coffee: 'Coffee', 'non-coffee': 'Non-Coffee', juice: 'Juice & Smoothie', breakfast: 'Breakfast', lunch: 'Lunch', dinner: 'Dinner', snack: 'Snack', dessert: 'Dessert' };
+            const map = { coffee: '☕ Coffee', 'non-coffee': '🧋 Non-Coffee', juice: '🍹 Juice & Smoothie', breakfast: '🥞 Breakfast', lunch: '🍛 Lunch', dinner: '🥩 Dinner', snack: '🍟 Snack', dessert: '🍰 Dessert' };
             return map[cat] || cat;
         }
 
@@ -2370,7 +2762,7 @@
                 cart.push({ ...item, qty: 1 });
             }
             updateCart();
-            showToast(`${item.emoji} ${item.name} ditambahkan!`, 'success');
+            showToast(`${item.emoji} ${item.name} ditambahkan ke keranjang`, 'success');
         }
 
         function removeFromCart(id) {
@@ -2388,19 +2780,21 @@
 
         function updateCart() {
             const list = $('#cartItemsList');
-            const empty = $('#cartEmpty');
             const summary = $('#cartSummary');
             const badge = $('#cartBadge');
             const btn = $('#placeOrderBtn');
+            const floatCart = $('#mobileCartFloat');
+            const floatText = $('#floatCartSummary');
 
             const totalItems = cart.reduce((s, i) => s + i.qty, 0);
             badge.textContent = totalItems;
             badge.classList.toggle('show', totalItems > 0);
 
             if (cart.length === 0) {
-                list.innerHTML = `<div class="cart-empty" id="cartEmpty"><div class="icon">🛒</div><p>Keranjang masih kosong</p><p style="font-size:0.8rem;margin-top:6px;">Tambahkan menu dari daftar menu di atas</p></div>`;
+                list.innerHTML = `<div class="cart-empty" id="cartEmpty"><div class="cart-empty-icon">🛒</div><p>Keranjang masih kosong</p><p style="font-size:0.8rem;margin-top:6px;">Pilih menu dari daftar di atas</p></div>`;
                 summary.style.display = 'none';
                 btn.disabled = true;
+                if (floatCart) floatCart.classList.remove('show');
                 return;
             }
 
@@ -2409,17 +2803,17 @@
             cart.forEach(item => {
                 html += `
                 <div class="cart-item">
-                    <div class="cart-item-emoji">${item.emoji}</div>
+                    <span class="cart-item-emoji">${item.emoji}</span>
                     <div class="cart-item-info">
                         <div class="cart-item-name">${item.name}</div>
                         <div class="cart-item-price">Rp ${item.price.toLocaleString('id-ID')}</div>
                     </div>
                     <div class="cart-item-qty">
-                        <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+                        <button class="qty-btn" onclick="changeQty(${item.id}, -1)" aria-label="Kurangi">−</button>
                         <span>${item.qty}</span>
-                        <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+                        <button class="qty-btn" onclick="changeQty(${item.id}, 1)" aria-label="Tambah">+</button>
                     </div>
-                    <button class="remove-item" onclick="removeFromCart(${item.id})" title="Hapus">✕</button>
+                    <button class="remove-item" onclick="removeFromCart(${item.id})" title="Hapus" aria-label="Hapus item">✕</button>
                 </div>
             `;
             });
@@ -2435,6 +2829,12 @@
             $('#deliveryFeeRow').style.display = orderType === 'delivery' ? 'flex' : 'none';
             $('#totalPrice').textContent = `Rp ${total.toLocaleString('id-ID')}`;
             summary.style.display = 'block';
+
+            // Show mobile floating cart bar
+            if (floatCart && window.innerWidth <= 768) {
+                floatText.textContent = `${totalItems} Item | Rp ${total.toLocaleString('id-ID')}`;
+                floatCart.classList.add('show');
+            }
         }
 
         /* ─────────────── ORDER TYPE ─────────────── */
@@ -2474,7 +2874,7 @@
             const delivFee = orderType === 'delivery' ? 10000 : 0;
             const total = subtotal + tax + delivFee;
 
-            const orderTypeLabel = { 'dine-in': 'Dine In', 'take-away': 'Take Away', 'delivery': 'Delivery' }[orderType];
+            const orderTypeLabel = { 'dine-in': '🍽️ Dine In', 'take-away': '🛍️ Take Away', 'delivery': '🛵 Delivery' }[orderType];
             const seating = orderType === 'dine-in' ? ($('#seatingSelect').value || 'Belum dipilih') : '-';
             const payMethod = $('#payMethod').value;
             const notes = $('#orderNotes').value.trim() || '-';
@@ -2496,9 +2896,9 @@
             const receiptHTML = `
             <div class="receipt-printable" id="receiptPrintable">
                 <div class="receipt-header">
-                    <p style="font-size:1.6rem;margin-bottom:4px;">☕</p>
+                    <div class="receipt-logo">☕</div>
                     <h2>Tifanny's</h2>
-                    <p style="font-family:var(--font-script);font-size:1.1rem;color:var(--accent);">Coffee n Bake</p>
+                    <p style="font-family:var(--font-script);font-size:1.15rem;color:var(--accent);">Coffee n Bake</p>
                     <p style="margin-top:8px;">Jl. Rungkut Madya No. 88, Surabaya</p>
                 </div>
                 <div class="receipt-body">
@@ -2536,14 +2936,14 @@
                     </div>
                 </div>
                 <div class="receipt-note">
-                    <p>✅ Pesanan berhasil dibuat!</p>
+                    <p>✨ Pesanan Berhasil Dibuat ✨</p>
                     <p>Tunjukkan struk ini ke <strong>kasir</strong> untuk pembayaran & pengambilan pesanan.</p>
-                    <p style="margin-top:8px;">Terima kasih telah memilih <strong>Tifanny's Coffee n Bake</strong> ☕❤️</p>
+                    <p style="margin-top:8px;">Terima kasih telah memilih <strong>Tifanny's Coffee n Bake</strong>! ☕</p>
                 </div>
             </div>
             <div class="receipt-actions">
                 <button class="btn btn-primary btn-sm" onclick="downloadReceiptJPG('${orderCode}')" id="btnDownloadJpg">📥 Download Struk (JPG)</button>
-                <button class="btn btn-outline btn-sm" onclick="closeReceipt()">✕ Tutup</button>
+                <button class="btn btn-outline btn-sm" onclick="closeReceipt()">Tutup</button>
             </div>
         `;
 
@@ -2575,7 +2975,7 @@
             if (!printable) return;
 
             if (typeof html2canvas === 'undefined') {
-                showToast('⚠️ Sedang memuat modul gambar, mohon tunggu...', 'error');
+                showToast('Sedang memuat modul gambar...', 'error');
                 return;
             }
 
@@ -2584,7 +2984,7 @@
                 btn.innerHTML = '⏳ Menyiapkan JPG...';
                 btn.disabled = true;
             }
-            showToast('⏳ Sedang memproses download struk JPG...', 'success');
+            showToast('Sedang memproses download struk JPG...', 'success');
 
             try {
                 const canvas = await html2canvas(printable, {
@@ -2604,10 +3004,10 @@
                 link.click();
                 document.body.removeChild(link);
 
-                showToast('✅ Struk berhasil didownload (JPG)!', 'success');
+                showToast('Struk berhasil didownload (JPG)!', 'success');
             } catch (err) {
                 console.error('Download JPG Error:', err);
-                showToast('⚠️ Gagal mendownload struk JPG', 'error');
+                showToast('Gagal mendownload struk JPG', 'error');
             } finally {
                 if (btn) {
                     btn.innerHTML = originalText;
@@ -2621,17 +3021,17 @@
             const container = $('#toastContainer');
             const toast = document.createElement('div');
             toast.className = `toast ${type}`;
-            toast.innerHTML = `<span>${type === 'success' ? '✅' : '⚠️'}</span> <span>${msg}</span>`;
+            toast.textContent = msg;
             container.appendChild(toast);
             setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateX(100px)'; toast.style.transition = '0.3s ease'; setTimeout(() => toast.remove(), 300); }, 2800);
         }
 
-        /* ─────────────── NAVBAR ─────────────── */
+        /* ─────────────── NAVBAR & SCROLL ─────────────── */
         const navbar = $('#navbar');
         const backToTop = $('#backToTop');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 60);
-            backToTop.classList.toggle('show', window.scrollY > 600);
+            backToTop.classList.toggle('show', window.scrollY > 500);
 
             // Active link
             const sections = ['hero', 'about', 'menu', 'spaces', 'order', 'location'];
@@ -2648,12 +3048,30 @@
             }
         });
 
-        /* ─────────────── MOBILE TOGGLE ─────────────── */
-        $('#mobileToggle').addEventListener('click', () => {
-            $('#navLinks').classList.toggle('open');
+        /* ─────────────── MOBILE TOGGLE & MENU ─────────────── */
+        const mobileToggle = $('#mobileToggle');
+        const navLinks = $('#navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+            document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
         });
+
         $$('.nav-links a').forEach(a => {
-            a.addEventListener('click', () => $('#navLinks').classList.remove('open'));
+            a.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+                document.body.style.overflow = '';
+            }
         });
 
         /* ─────────────── SCROLL TO ORDER ─────────────── */
